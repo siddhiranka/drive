@@ -5,12 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
-  </head>
+<link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css"
+    rel="stylesheet"
+/> 
+</head>
   <body>
  <main class="p-4 bg-gray-100 dark:bg-gray-800 h-screen w-screen">
-    <button class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-5 rounded">UPLOAD FILE</button>
+    <button onclick="showpopup()"
+    class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-5 rounded">UPLOAD FILE</button>
 
-    <div class="pop backdrop-blur fixed top-0 left-0 h-screen w-screen flex items-center justify-center">
+    <div class="pop hidden fixed top-0 left-0 h-screen w-screen flex items-center justify-center">
         <form action="/upload-file"
         method="post"
         enctype="multipart/form-data        "
@@ -29,10 +34,25 @@
 </div> 
 <button class="bg-blue-600 hover:bg-blue-700 text-white  py-2 px-5 rounded ">UPLOAD FILE</button>
 </form>
-
+<button
+class="absolute top-4 right-4 text-gray-500 dark:text-gray-400 text-xl"
+onclick="hidepopup()">
+    <i class="ri-close-line"></i>
+</button>
 
     </div>
 </main>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
-  </body>
+<script>
+
+function showpopup(){
+    document.querySelector('.pop').style.display='flex'
+}
+
+function hidepopup(){
+    document.querySelector('.pop').style.display='none'
+}
+
+</script>  
+</body>
 </html> 
